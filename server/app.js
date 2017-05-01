@@ -13,6 +13,7 @@ import stylus from 'stylus';
 import nib from 'nib';
 import connectmongo from 'connect-mongo';
 import passport from 'passport';
+import bootstrap from 'bootstrap-styl';
 
 const app = express();
 
@@ -27,23 +28,27 @@ const MongoStore = connectmongo(session);
 routes.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'pug');
 
-// middlewares
+// MIDDLEWARES
 app.use(logger('dev', {
   skip: () => app.get('env') === 'test'
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Stylus
+function compile(str) {
+  return stylus(str)
+    .use(bootstrap());
+}
 app.use(stylus.middleware({
 	src: path.join(__dirname, '../public/css'),
 	dest: path.join(__dirname, '../public/css'),
 	use: [nib()],
+	compile: compile,
 	import: ['nib'],
 	force: true
 }));
-
 app.use(express.static(path.join(__dirname, '../public')));
-
 mini.minify({
   compressor: 'clean-css',
   input: path.join(__dirname, '../public/css/main.css'),
@@ -55,6 +60,7 @@ mini.minify({
   callback: function (err, min) {}
 });
 
+// Other middlewares
 app.use(compression());
 app.use(session({
   resave: true,
@@ -86,7 +92,7 @@ app.use(lusca({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Routes
+// ROUTES
 // api
 import routes from './routes';
 app.use('/api', routes);
