@@ -1,7 +1,9 @@
 const basicController = {};
 
 basicController.get = (req, res) => {
-	res.render('index');
+	res.json({
+		"message": "hi"
+	});
 };
 
 export default basicController;

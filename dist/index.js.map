@@ -1,1 +1,1 @@
-{"version":3,"sources":["../server/index.js"],"names":["console","log"],"mappings":";;AAAAA,QAAQC,GAAR,CAAY,UAAZ","file":"index.js","sourcesContent":["console.log('index.js');\r\n"]}
+{"version":3,"sources":["../server/index.js"],"names":["listen","console","log"],"mappings":";;AAAA;;;;;;AAGA,cAAIA,MAAJ,CAAW,IAAX,EAAiB,YAAM;AACtBC,SAAQC,GAAR,CAAY,yBAAZ;AACA,CAFD","file":"index.js","sourcesContent":["import app from './app';\r\n\r\n\r\napp.listen(3000, () => {\r\n\tconsole.log('Running on port 3000...');\r\n});\r\n"]}

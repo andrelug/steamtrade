@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import session from 'express-session';
 import compression from 'compression';
+import mini from 'node-minify';
 import errorHandler from 'errorHandler';
 import multer from 'multer';
 import lusca from 'lusca';
@@ -13,18 +14,17 @@ import nib from 'nib';
 import connectmongo from 'connect-mongo';
 import passport from 'passport';
 
-// Routes
-import routes from './routes';
+const app = express();
 
 mongoose.connect('mongodb://localhost:27017/database', () => {
 	console.log('Connected to mongodb...');
 });
 
-const app = express();
+
 const MongoStore = connectmongo(session);
 
 // View engine setup
-app.set('views', __dirname+'server/views/');
+routes.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'pug');
 
 // middlewares
@@ -33,13 +33,28 @@ app.use(logger('dev', {
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/', routes);
-app.use(express.static(path.join(__dirname, '../public')));
+
 app.use(stylus.middleware({
-	src: path.join(__dirname, '../public'),
+	src: path.join(__dirname, '../public/css'),
+	dest: path.join(__dirname, '../public/css'),
 	use: [nib()],
-	import: ['nib']
+	import: ['nib'],
+	force: true
 }));
+
+app.use(express.static(path.join(__dirname, '../public')));
+
+mini.minify({
+  compressor: 'clean-css',
+  input: path.join(__dirname, '../public/css/main.css'),
+  output: path.join(__dirname, '../public/css/bundle.css'),
+  options: {
+    advanced: true,
+    aggressiveMerging: false
+  },
+  callback: function (err, min) {}
+});
+
 app.use(compression());
 app.use(session({
   resave: true,
@@ -70,6 +85,15 @@ app.use(lusca({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Routes
+// api
+import routes from './routes';
+app.use('/api', routes);
+// react
+app.get('*', (req, res) => {
+	res.render('index');
+});
 
 // Error handler
 app.use(errorHandler());

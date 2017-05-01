@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'path';
 
 // Controllers Imports
 import basicController from './controllers/basicController';
