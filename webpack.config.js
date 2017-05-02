@@ -32,7 +32,7 @@ module.exports = [/*
     {
 		context: __dirname,
 		devtool: debug ? "inline-sourcemap" : null,
-        entry: './public/app/app.jsx',
+        entry: ['babel-polyfill','./public/app/app.jsx'],
         output: {
 			path: __dirname + "/public/app/",
 			filename: "bundle.js"
@@ -42,7 +42,11 @@ module.exports = [/*
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 query: {
-                    presets: ['react', 'es2015', 'stage-2']
+                    presets: ['react', 'es2015', 'stage-2'],
+					"plugins": [
+					  "transform-decorators-legacy",
+					  "transform-class-properties"
+				  ]
                 }
             }]
         },

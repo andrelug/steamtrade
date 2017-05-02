@@ -1,0 +1,39 @@
+nav.navbar.navbar-default(role="navigation")
+	.container-fluid.menu
+		.navbar-header
+			button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1", aria-expanded="false")
+				span.sr-onlyToggle navigation
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand(href="/") Trade Bot Jabuti
+
+		.collapse.navbar-collapse#bs-example-navbar-collapse-1
+			ul.nav.navbar-nav.navbar-right
+				li
+					a(href="/") TRADE
+				li
+					a.modal(data-toggle="modal", data-target="#popBots") BOTS
+				li
+					a(href="/about") ABOUT
+				li.languages.dropdown
+					a.dropdown-toggle(href="#",data-toggle="dropdown", role="button", aria-haspopup="true", aria-expanded="false") LANG
+						span.caret
+					ul.dropdown-menu
+						li
+							a.selected(href="/en") EN
+						li
+							a(href="/pt") PT
+						li
+							a(href="/es") ES
+				li.currency.dropdown
+					a.dropdown-toggle(href="#",data-toggle="dropdown", role="button", aria-haspopup="true", aria-expanded="false") CURR
+						span.caret
+					ul.dropdown-menu
+						li
+							a.selected(href="#") US$
+						li
+							a(href="#") R$
+						li
+							a(href="#") EU$
+						

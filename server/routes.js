@@ -4,7 +4,7 @@ import path from 'path';
 // Controllers Imports
 import basicController from './controllers/basicController';
 import userController from './controllers/userController';
-import postController from './controllers/postController';
+import itemController from './controllers/itemController';
 
 const routes = express();
 
@@ -15,7 +15,7 @@ routes.get('/', basicController.get);
 routes.post('/signup', userController.post);
 
 // Post routes
-routes.post('/post', postController.post);
-routes.get('/posts', postController.getAll);
+routes.post('/item', itemController.post);
+routes.get('/items', itemController.getAll);
 
 export default routes;
