@@ -37,6 +37,10 @@ export default class Menu extends React.Component {
 								<MenuItem href="#">R$</MenuItem>
 								<MenuItem href="#">EU</MenuItem>
 							</NavDropdown>
+
+							<li>
+                                <a href="/api/login">LOGIN</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

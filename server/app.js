@@ -25,7 +25,7 @@ mongoose.connect('mongodb://localhost:27017/database', () => {
 const MongoStore = connectmongo(session);
 
 // View engine setup
-routes.set('views', path.join(__dirname, '../views'));
+app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'pug');
 
 // MIDDLEWARES
