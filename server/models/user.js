@@ -5,13 +5,16 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
 	username: {
 		type: String,
-		required: true,
 		minLength: [5, 'Nome de usuário precisa ter 5 caracteres ou mais.']
 	},
 	password: {
 		type: String,
-		required: true,
 		minLength: [8, 'A senha precisa ter 8 caracteres ou mais.']
+	},
+	auth: {
+		steam: {
+			openId: String
+		}
 	},
 	isDeleted: { type: Boolean, default: false },
 	createdAt: { type: Date, default: Date.now },

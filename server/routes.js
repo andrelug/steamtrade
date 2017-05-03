@@ -20,6 +20,7 @@ routes.post('/item', itemController.post);
 routes.get('/items', itemController.getAll);
 
 // Login routes
-routes.get('/login', loginController.get);
+routes.get('/steam', loginController.get);
+routes.get('/steam/logout', loginController.logout);
 
 export default routes;

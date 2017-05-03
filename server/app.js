@@ -2,18 +2,16 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import session from 'express-session';
-import compression from 'compression';
 import mini from 'node-minify';
 import errorHandler from 'errorHandler';
 import multer from 'multer';
-import lusca from 'lusca';
-import logger from 'morgan';
 import path from 'path';
 import stylus from 'stylus';
 import nib from 'nib';
 import connectmongo from 'connect-mongo';
-import passport from 'passport';
 import bootstrap from 'bootstrap-styl';
+import passport from 'passport';
+
 
 const app = express();
 
@@ -29,9 +27,6 @@ app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'pug');
 
 // MIDDLEWARES
-app.use(logger('dev', {
-  skip: () => app.get('env') === 'test'
-}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -61,11 +56,10 @@ mini.minify({
 });
 
 // Other middlewares
-app.use(compression());
 app.use(session({
-  resave: true,
+  resave: false,
   saveUninitialized: true,
-  secret: 'appSessionsSecret',
+  secret: 'asfadsfsadfdas35fw',
   store: new MongoStore({
 	url: 'mongodb://localhost:27017/databaseSession',
 	cookie: {
@@ -75,27 +69,23 @@ app.use(session({
 	clear_interval: 3600
   })
 }));
-app.use(lusca({
-    csrf: true,
-    csp: {
-		policy: {
-		'default-src': '\'self\'',
-		'img-src': '*'
-		}
-	},
-    xframe: 'SAMEORIGIN',
-    p3p: 'ABCDEF',
-    hsts: {maxAge: 31536000, includeSubDomains: true, preload: true},
-    xssProtection: true,
-    nosniff: true
-}));
+
+// Auth
 app.use(passport.initialize());
 app.use(passport.session());
 
 // ROUTES
 // api
 import routes from './routes';
+
 app.use('/api', routes);
+// Especial wouldn't work at proper place
+app.get('/api/steam/callback',
+  passport.authenticate('steam', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/api');
+  });
 // react
 app.get('*', (req, res) => {
 	res.render('index');

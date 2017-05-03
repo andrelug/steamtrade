@@ -19,7 +19,7 @@ class ItemsStore {
 	@computed get filteredItems() {
 		const matchesFilter = new RegExp(this.filter, "i");
 		if (this.all.data) {
-			return this.all.data.filter(item => !this.filter || matchesFilter.test(item.nome));
+			return this.all.data.filter(item => !this.filter || matchesFilter.test(item.title));
 		} else {
 			return []
 		}
