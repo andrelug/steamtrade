@@ -11,7 +11,9 @@ import nib from 'nib';
 import connectmongo from 'connect-mongo';
 import bootstrap from 'bootstrap-styl';
 import passport from 'passport';
+import Promise from 'bluebird';
 
+Promise.promisifyAll(mongoose);
 
 const app = express();
 
