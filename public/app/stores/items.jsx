@@ -6,7 +6,7 @@ class ItemsStore {
 
 	@action async fetchAll() {
 		this.isLoading = false;
-		const response = await fetch('http://localhost:3000/api/items');
+		const response = await fetch('http://localhost:3000/api/items', { credentials : 'same-origin' });
 		const status = await response.status;
 
 

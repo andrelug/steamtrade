@@ -23,11 +23,7 @@ const routes = express();
 routes.get('/', basicController.get);
 
 // User routes
-routes.post('/signup', userController.post);
-
-// Post routes
-routes.post('/item', itemController.post);
-routes.get('/items', itemController.getAll);
+routes.get('/items', userController.getAll);
 
 // Login routes
 routes.get('/steam', loginController.get);

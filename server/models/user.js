@@ -14,6 +14,7 @@ const userSchema = new Schema({
         type: String,
         minLength: [8, 'A senha precisa ter 8 caracteres ou mais.']
     },
+	steamid: String,
     avatar: String,
     loccountrycode: String,
     locstatecode: String,

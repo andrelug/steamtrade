@@ -19,10 +19,27 @@ export default class UserItemsContainer extends React.Component {
 
 		return(
 			<div className="col-md-5 col-xs-6 col-md-pull-2">
-				<h2>Filtro</h2>
-				<div>{filter}</div>
-				<input className="filter" value={filter} onChange={this.filter.bind(this)} />
-				<ul>{itemsList}</ul>
+				<div className="offerContainer">
+					<div className="offerHead">
+						<div className="row">
+							<div className="col-xs-6">
+								<h2>YOUR OFFER</h2>
+								<input className="filter" value={filter} onChange={this.filter.bind(this)} />
+							</div>
+							<div className="col-xs-6">
+								<h3>0.00 <span className="curency">US$</span></h3>
+							</div>
+						</div>
+					</div>
+					<div className="offerBody">
+						<div className="offerText">
+
+						</div>
+						<div className="offerItems">
+							<ul>{itemsList}</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 		)
 	}

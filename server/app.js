@@ -61,7 +61,7 @@ mini.minify({
 app.use(session({
   resave: false,
   saveUninitialized: true,
-  secret: 'asfadsfsadfdas35fw',
+  secret: 'asadlfjadçfkjalkdjalfkdjalkfd',
   store: new MongoStore({
 	url: 'mongodb://localhost:27017/databaseSession',
 	cookie: {
@@ -83,13 +83,14 @@ import routes from './routes';
 app.use('/api', routes);
 // Especial wouldn't work at proper place
 app.get('/api/steam/callback',
-  passport.authenticate('steam', { failureRedirect: '/login' }),
+  passport.authenticate('steam', { failureRedirect: '/api' }),
   function(req, res) {
     // Successful authentication, redirect home.
     res.redirect('/api');
   });
 // react
 app.get('*', (req, res) => {
+
 	res.render('index');
 });
 
