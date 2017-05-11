@@ -18,22 +18,32 @@ export default class UserItemsContainer extends React.Component {
 		))
 
 		return(
-			<div className="col-md-5 col-xs-6 col-md-pull-2">
-				<div className="offerContainer">
+			<div className="col-md-5 col-sm-6 col-md-pull-2" id="userItemsContainer">
+				<div className="inventoryContainer">
 					<div className="offerHead">
 						<div className="row">
-							<div className="col-xs-6">
-								<h2>YOUR OFFER</h2>
-								<input className="filter" value={filter} onChange={this.filter.bind(this)} />
+							<div className="col-xs-1">
+								<img src="/images/refresh.svg" alt="reload button" className="refresh" />
 							</div>
-							<div className="col-xs-6">
-								<h3>0.00 <span className="curency">US$</span></h3>
+							<div className="col-xs-4 text-center">
+								<div className="drop">
+									<button className="dropbtn">ORDER BY <span className="caret"></span></button>
+									<div className="drop-content">
+										<a href="#">MOST RECENT</a>
+										<a href="#">HIGHEST PRICE</a>
+										<a href="#">LOWEST PRICE</a>
+								  	</div>
+								</div>
+							</div>
+							<div className="col-xs-4 col-xs-offset-3">
+								<input className="search" value={filter} onChange={this.filter.bind(this)} placeholder="Search:" />
 							</div>
 						</div>
 					</div>
 					<div className="offerBody">
-						<div className="offerText">
-
+						<div className="offerText text-center">
+							<p>SIGN IN WITH STEAM TO DISPLAY YOUR ITEMS HERE</p>
+							<a href="#"><img src="/images/steam.png" alt="log in with steam" /></a>
 						</div>
 						<div className="offerItems">
 							<ul>{itemsList}</ul>

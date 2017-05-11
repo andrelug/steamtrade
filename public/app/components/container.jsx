@@ -17,7 +17,7 @@ export default class Container extends React.Component {
 					<OfferContainer />
 					<ReceiverContainer />
 				</div>
-				<div className="row">
+				<div className="row" id="bottomRow">
 					<ItemsFilters />
 					<UserItemsContainer items={Items} />
 					<BotItems />

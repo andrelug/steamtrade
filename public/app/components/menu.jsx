@@ -7,16 +7,25 @@ export default class Menu extends React.Component {
             <nav role="navigation" className="navbar navbar-default">
                 <div className="container-fluid menu">
                     <div className="navbar-header">
-                        <button type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" className="navbar-toggle collapsed">
+                        <button type="button" data-toggle="collapse" data-target="#menuDiv" aria-expanded="false" className="navbar-toggle collapsed">
                             <span className="sr-onlyToggle">navigation</span>
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                        <a href="/" className="navbar-brand">Trade Bot Jabuti</a>
+                        <a href="/" className="navbar-brand">
+							<img src="/images/logo_white.png" alt="logo" />
+						</a>
                     </div>
-                    <div id="bs-example-navbar-collapse-1" className="collapse navbar-collapse">
-                        <ul className="nav navbar-nav navbar-right">
+                    <div id="menuDiv" className="collapse navbar-collapse">
+						<ul className="nav navbar-nav navbar-right">
+							<li>
+                                <a href="/api/login">
+									<img src="/images/steam_menu.png" alt="steam login menu" /></a>
+                            </li>
+						</ul>
+
+                        <ul className="nav navbar-nav navbar-menu">
                             <li>
                                 <a href="/">TRADE</a>
                             </li>
@@ -37,12 +46,11 @@ export default class Menu extends React.Component {
 								<MenuItem href="#">R$</MenuItem>
 								<MenuItem href="#">EU</MenuItem>
 							</NavDropdown>
-
-							<li>
-                                <a href="/api/login">LOGIN</a>
-                            </li>
                         </ul>
+
+
                     </div>
+
                 </div>
             </nav>
         )

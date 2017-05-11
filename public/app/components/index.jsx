@@ -6,3 +6,4 @@ export { default as OfferButtons } from './offerButtons.jsx';
 export { default as OfferContainer } from './offerContainer.jsx';
 export { default as ReceiverContainer } from './receiverContainer.jsx';
 export { default as UserItemsContainer } from './userItemsContainer.jsx';
+export { default as Footer } from './footer.jsx';

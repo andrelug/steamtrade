@@ -6747,6 +6747,267 @@ button.close {
     display: none !important;
   }
 }
-h1 {
-  color: #00f;
+* {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  margin-top: 10px;
+}
+.btn {
+  border-radius: 0;
+}
+.container_fluid {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+.navbar-default {
+  background-color: #131217;
+  min-height: 70px;
+  outline: 3px solid #fd6c01;
+  border: none;
+  border-radius: 0px;
+}
+.navbar-menu {
+  margin-top: 10px;
+  float: right;
+}
+.navbar-right > li > a {
+  padding: 0;
+  margin-top: 5px;
+}
+.navbar-header img {
+  max-width: 230px;
+  top: -12px;
+  position: relative;
+}
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-brand {
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: #fd6c01;
+}
+footer {
+  background-color: #131217;
+  color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+}
+footer ul {
+  float: right;
+}
+footer ul li {
+  float: left;
+  list-style: none;
+  margin-right: 10px;
+}
+footer ul li a {
+  color: #fff;
+}
+footer ul li a:hover {
+  color: #fd6c01;
+}
+.filterBody,
+.ratesBody {
+  padding: 20px 0;
+}
+.ratesContainer {
+  margin-top: 20px;
+}
+.rates {
+  font-weight: bold;
+  font-size: 14px;
+}
+.filterBody .row {
+  margin-top: 10px;
+}
+.offerHead,
+.filterHead,
+.ratesHead {
+  border-bottom: 3px solid #fd6c01;
+  background-color: #131217;
+  padding: 10px 15px;
+  color: #fff;
+  height: 75px;
+}
+.filterSlider .filterValues {
+  display: block;
+  padding: 10px 0;
+  font-size: 18px;
+  background-color: #fd6c01;
+  color: #fff;
+}
+.filterContainer {
+  margin-top: -140px;
+}
+.offerBody,
+.filterBody,
+.ratesBody {
+  background-color: #d1e3e5;
+}
+.search {
+  height: 45px;
+  margin-top: 4px;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 18px;
+  outline: none;
+  color: #131217;
+}
+.offerContainer .offerBody {
+  height: 230px;
+  padding-top: 10%;
+}
+.offerContainer .offerBody p {
+  font-size: 18px;
+}
+.inventoryContainer .offerBody {
+  padding-top: 5%;
+}
+.inventoryContainer .offerBody p {
+  font-size: 18px;
+}
+.inventoryContainer .offerBody img {
+  max-width: 300px;
+}
+.inventoryContainer .offerBody {
+  height: 540px;
+}
+#bottomRow {
+  margin-top: 35px;
+}
+.ratesBody .btn-auto {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+.btn-auto,
+.btn-main {
+  width: 100%;
+}
+.btn-main {
+  background-color: #fd6c01;
+  color: #fff;
+  padding: 20px 0;
+  font-size: 24px;
+  font-weight: bold;
+  border: 2px solid #fff;
+  outline: 2px solid #fd6c01;
+  margin-top: 20px;
+}
+.btn-auto {
+  background-color: #131217;
+  color: #fff;
+  margin-top: 20px;
+  padding: 10px 0;
+  font-size: 16px;
+}
+.btn-main:hover,
+.btn-auto:hover {
+  color: #fff;
+}
+.btn-bonus {
+  display: block;
+  color: #131217;
+  font-weight: bold;
+  font-size: 16px;
+  border: 2px solid #fd6c01;
+  padding: 5px 10px;
+  width: 80%;
+  margin: 5px auto 0 auto;
+}
+.btn-bonus:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: #fd6c01;
+}
+.dropbtn {
+  background-color: #fd6c01;
+  color: #fff;
+  padding: 15px 0;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+.drop {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.drop-content {
+  display: none;
+  position: absolute;
+  background-color: #131217;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.drop-content a {
+  color: #fff;
+  padding: 15px 0;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+.drop-content a:hover {
+  background-color: #fff;
+  color: #131217;
+}
+.drop:hover .drop-content {
+  display: block;
+  width: 100%;
+}
+.drop:hover .dropbtn {
+  background-color: #fd6c01;
+}
+.drop .col-xs-4,
+.drop .col-xs-12 {
+  padding: 0px;
+}
+.refresh {
+  width: 40px;
+  margin-top: 6px;
+  cursor: pointer;
+  transition: 0.85s;
+  display: block;
+  height: 40px;
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.refresh:hover {
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+@media (max-width: 992px) {
+  .pullDown {
+    margin-bottom: 20px;
+  }
+  body {
+    background: #000;
+  }
+  #userItemsContainer,
+  #offerContainer,
+  #botItems,
+  #receiverContainer {
+    margin-bottom: 20px;
+  }
+  .filterContainer {
+    margin-top: 0px;
+  }
 }
