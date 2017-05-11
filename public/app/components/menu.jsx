@@ -35,17 +35,26 @@ export default class Menu extends React.Component {
                             <li>
                                 <a href="/about">ABOUT</a>
                             </li>
-							<NavDropdown title="LANG" className="languages dropdown" id="languageDropDown">
-								<MenuItem href="/en" className="selected">ENG</MenuItem>
-								<MenuItem href="/pt">PT</MenuItem>
-								<MenuItem href="/es">ESP</MenuItem>
-							</NavDropdown>
+							<li>
+								<div className="drop">
+									<button className="dropbtn">ENG <span className="caret"></span></button>
+									<div className="drop-content">
+										<a href="#">PT</a>
+										<a href="#">ESP</a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div className="drop">
+									<button className="dropbtn">US$ <span className="caret"></span></button>
+									<div className="drop-content">
+										<a href="#">R$</a>
+										<a href="#">EU</a>
+									</div>
+								</div>
+							</li>
 
-							<NavDropdown title="US$" className="currency dropdown" id="currencyDropDown">
-								<MenuItem href="#" className="selected">US$</MenuItem>
-								<MenuItem href="#">R$</MenuItem>
-								<MenuItem href="#">EU</MenuItem>
-							</NavDropdown>
+
                         </ul>
 
 

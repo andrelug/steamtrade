@@ -2,6 +2,7 @@
 $detailColor = #fd6c01
 $darkBackground = #131217
 $lightBackground = #d1e3e5
+
 // Vendor
 @import "bootstrap"
 
@@ -73,7 +74,7 @@ footer ul li a:hover
 	color $detailColor
 
 .filterBody, .ratesBody
-	padding 20px 0
+	padding 10px 0 15px 0
 
 .ratesContainer
 	margin-top 20px
@@ -99,8 +100,16 @@ footer ul li a:hover
 	background-color $detailColor
 	color white
 
+	input
+		background-color transparent
+		border none
+		outline none
+		width 100%
+		text-align center
+
+
 .filterContainer
-	margin-top -140px
+	margin-top -157px
 
 .offerBody, .filterBody, .ratesBody
 	background-color $lightBackground
@@ -155,7 +164,6 @@ footer ul li a:hover
 	font-weight bold
 	border 2px solid white
 	outline 2px solid $detailColor
-	margin-top 20px
 
 .btn-auto
 	background-color $darkBackground
@@ -230,6 +238,14 @@ footer ul li a:hover
 
 .drop .col-xs-4, .drop .col-xs-12
 	padding 0px;
+
+.nav .drop
+	width 60px
+	margin-top -1px
+
+	button
+		background-color initial
+
 // ELEMENTS
 
 .refresh

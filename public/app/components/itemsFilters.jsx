@@ -1,8 +1,16 @@
 import React from 'react';
 import { observer } from 'mobx-react';
+import InputRange from 'react-input-range';
 
 @observer
 export default class ItemsFilters extends React.Component {
+	constructor(props) {
+	    super(props);
+
+	    this.state = {
+	      value: { min: 0, max: 3500 },
+	    };
+  }
 	render() {
 
 		return(
@@ -22,15 +30,24 @@ export default class ItemsFilters extends React.Component {
 						<div className="filterSlider">
 							<div className="row">
 								<div className="col-xs-5 col-xs-offset-1 text-center">
-									<span className="filterValues">0</span>
+									<span className="filterValues">
+										<input type="text" name="minPrice" value={this.state.value.min} />
+									</span>
 								</div>
 								<div className="col-xs-5 text-center">
-									<span className="filterValues">3500</span>
+									<span className="filterValues">
+										<input type="text" name="minPrice" value={this.state.value.max}  />
+									</span>
 								</div>
 							</div>
 							<div className="row">
 								<div className="col-xs-12" id="slider">
-
+									<InputRange
+							          maxValue={3500}
+							          minValue={0}
+							          value={this.state.value}
+							          onChange={value => this.setState({ value })}
+							          onChangeComplete={value => console.log(value)} />
 								</div>
 							</div>
 						</div>

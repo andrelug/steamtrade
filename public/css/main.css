@@ -6816,7 +6816,7 @@ footer ul li a:hover {
 }
 .filterBody,
 .ratesBody {
-  padding: 20px 0;
+  padding: 10px 0 15px 0;
 }
 .ratesContainer {
   margin-top: 20px;
@@ -6844,8 +6844,15 @@ footer ul li a:hover {
   background-color: #fd6c01;
   color: #fff;
 }
+.filterSlider .filterValues input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  text-align: center;
+}
 .filterContainer {
-  margin-top: -140px;
+  margin-top: -157px;
 }
 .offerBody,
 .filterBody,
@@ -6900,7 +6907,6 @@ footer ul li a:hover {
   font-weight: bold;
   border: 2px solid #fff;
   outline: 2px solid #fd6c01;
-  margin-top: 20px;
 }
 .btn-auto {
   background-color: #131217;
@@ -6973,6 +6979,13 @@ footer ul li a:hover {
 .drop .col-xs-4,
 .drop .col-xs-12 {
   padding: 0px;
+}
+.nav .drop {
+  width: 60px;
+  margin-top: -1px;
+}
+.nav .drop button {
+  background-color: initial;
 }
 .refresh {
   width: 40px;
