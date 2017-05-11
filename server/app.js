@@ -12,12 +12,23 @@ import connectmongo from 'connect-mongo';
 import bootstrap from 'bootstrap-styl';
 import passport from 'passport';
 import Promise from 'bluebird';
+import redis from 'redis';
+import envir from './helpers/env';
+
+Promise.promisifyAll(redis.RedisClient.prototype);
+// create a new redis client and connect to our local redis instance
+const client = redis.createClient(envir.redisdb.url);
+
+// if an error occurs, print it to the console
+client.on('error', function(err) {
+    console.log("Error " + err);
+});
 
 Promise.promisifyAll(mongoose);
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/database', () => {
+mongoose.connect(envir.mondb.url, () => {
 	console.log('Connected to mongodb...');
 });
 
@@ -63,7 +74,7 @@ app.use(session({
   saveUninitialized: true,
   secret: 'asadlfjadçfkjalkdjalfkdjalkfd',
   store: new MongoStore({
-	url: 'mongodb://localhost:27017/databaseSession',
+	url: envir.mondb.url2,
 	cookie: {
 		maxAge: 518400000
 	},
@@ -100,4 +111,4 @@ app.use(errorHandler());
 // Define uploads
 const upload = multer({ dest: path.join(__dirname, './../uploads') });
 
-export default app;
+export {app, client};

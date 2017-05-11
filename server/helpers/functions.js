@@ -2,16 +2,7 @@ import steamInventory from './steamInventory';
 import Promise from 'bluebird';
 import redis from 'redis';
 import db from './../models/index.js';
-
-Promise.promisifyAll(redis.RedisClient.prototype);
-
-// create a new redis client and connect to our local redis instance
-const client = redis.createClient();
-
-// if an error occurs, print it to the console
-client.on('error', function(err) {
-    console.log("Error " + err);
-});
+import { client } from './../app';
 
 const functions = {};
 
