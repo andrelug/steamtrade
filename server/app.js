@@ -102,7 +102,7 @@ app.get('/api/steam/callback',
 // react
 app.get('*', (req, res) => {
 
-	res.render('index');
+	res.render('index', {user: req.user});
 });
 
 // Error handler
