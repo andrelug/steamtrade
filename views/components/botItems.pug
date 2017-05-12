@@ -1,0 +1,39 @@
+#botItems.col-md-5.col-sm-6
+	div.inventoryContainer
+		div.offerHead
+			div.row
+				div.col-xs-4
+					input.search(value='', onchange='', placeholder='Search:')
+				div.col-xs-2.col-xs-offset-1
+					div.drop
+						button.dropbtn
+							| BOTS 
+							span.caret
+						div.drop-content.container
+							div.row
+								div.col-xs-12
+									a(href='#') ALL BOTS
+							div.row
+								div.col-xs-4.text-center
+									a(href='#') 1
+								div.col-xs-4.text-center
+									a(href='#') 2
+								div.col-xs-4.text-center
+									a(href='#') 3
+				div.col-xs-4.text-center
+					div.drop
+						button.dropbtn
+							| ORDER BY 
+							span.caret
+						div.drop-content
+							a(href='#') MOST RECENT
+							a(href='#') HIGHEST PRICE
+							a(href='#') LOWEST PRICE
+				div.col-xs-1
+					img.refresh(src='/images/refresh.svg', alt='reload button')
+		div.offerBody
+			div.offerText.text-center
+				p IT SEEMS WE ARE A LITTLE SHORT ON ITEMS
+				small PLEASE COME BACK IN A MOMENT OR CLICK THE REFRESH BUTTON
+			div.offerItems
+				ul

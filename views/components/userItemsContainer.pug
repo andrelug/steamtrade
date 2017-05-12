@@ -1,0 +1,24 @@
+#userItemsContainer.col-md-5.col-sm-6.col-md-pull-2
+	div.inventoryContainer
+		div.offerHead
+			div.row
+				div.col-xs-1
+					img.refresh(src='/images/refresh.svg', alt='reload button')
+				div.col-xs-4.text-center
+					div.drop
+						button.dropbtn
+							| ORDER BY 
+							span.caret
+						div.drop-content
+							a(href='#') MOST RECENT
+							a(href='#') HIGHEST PRICE
+							a(href='#') LOWEST PRICE
+				div.col-xs-4.col-xs-offset-3
+					input.search(value='{filter}', onchange='', placeholder='Search:')
+		div.offerBody
+			div.offerText.text-center
+				p SIGN IN WITH STEAM TO DISPLAY YOUR ITEMS HERE
+				a(href='#')
+					img(src='/images/steam.png', alt='log in with steam')
+			div.offerItems
+				ul

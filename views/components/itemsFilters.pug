@@ -1,0 +1,72 @@
+div.col-md-2.col-sm-12.col-md-push-5.pullDown
+	div.filterContainer
+		div.filterHead
+			div.row
+				div.col-xs-12.text-center
+					h3 BOT FILTERS
+		div.filterBody
+			div.filterPrice.text-center
+				h3 PRICE
+			div.filterSlider
+				div.row
+					div.col-xs-5.col-xs-offset-1.text-center
+						span.filterValues
+							input#minPrice(type='text', name='minPrice', value='')
+					div.col-xs-5.text-center
+						span.filterValues
+							input#maxPrice(type='text', name='maxPrice', value='')
+				div.row
+					.col-xs-12
+						#slider
+						
+			div.row
+				div.col-xs-10.col-xs-offset-1.text-center
+					div.drop
+						button.dropbtn
+							| TYPE 
+							span.caret
+						div.drop-content
+							a(href='#') Knifes
+							a(href='#') Keys
+							a(href='#') Rifle
+							a(href='#') Sniper Rifle
+			div.row
+				div.col-xs-10.col-xs-offset-1.text-center
+					div.drop
+						button.dropbtn
+							| EXTERIOR 
+							span.caret
+						div.drop-content
+							a(href='#') FACTOR NEW
+							a(href='#') MINIMAL WEAR
+							a(href='#') FIELD-TESTED
+							a(href='#') WELL-WORN
+							a(href='#') BATTLE-SCARRED
+	div.ratesContainer
+		div.ratesHead
+			div.row
+				div.col-xs-12.text-center
+					h3 MARKET RATES
+		div.ratesBody.text-center
+			div.ratesKeys.rates
+				p
+					| Keys
+					br
+					| 100% / 105%
+			div.ratesKnives.rates
+				p
+					| Knives
+					br
+					| 95% / 100%
+			div.ratesWeapons.rates
+				p
+					| Weapons
+					br
+					| 95% / 100%
+			div.ratesMisc.rates
+				p
+					| Misc
+					br
+					| 85% / 90%
+			a.btn.btn-auto(href='#') MORE
+			a.btn-bonus(href='#') GET 2% BONUS

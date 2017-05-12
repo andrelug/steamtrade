@@ -7007,6 +7007,18 @@ footer ul li a:hover {
   -o-transform: rotate(360deg);
   transform: rotate(360deg);
 }
+#slider {
+  width: 80%;
+  display: block;
+  margin: 15px auto;
+}
+.noUi-handle {
+  background: #131217;
+  box-shadow: none;
+}
+.noUi-connect {
+  background: #fd6c01;
+}
 @media (max-width: 992px) {
   .pullDown {
     margin-bottom: 20px;
