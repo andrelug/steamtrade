@@ -1,6 +1,8 @@
 div.col-md-2.col-sm-12.col-md-push-5.text-center.pullDown
-	a.btn.btn-main(href='#')
-		| TRADE
+	a.btn.btn-main(href='#', v-if=" ! disableTrade" v-on:click="sendOffer")
+		| ← TRADE →
+	a.btn.btn-main(href='#', disabled v-else)
+		| ← TRADE →
 	a.btn.btn-auto(href='#')
 		| AUTO
 		br

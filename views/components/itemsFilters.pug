@@ -52,21 +52,26 @@ div.col-md-2.col-sm-12.col-md-push-5.pullDown
 				p
 					| Keys
 					br
-					| 100% / 105%
+					| {{ parseInt(rates.user.key * 100) }}% / {{ parseInt(rates.bot.key * 100) }}%
 			div.ratesKnives.rates
 				p
 					| Knives
 					br
-					| 95% / 100%
+					| {{ parseInt(rates.user.knife * 100) }}% / {{ parseInt(rates.bot.knife * 100) }}%
+			div.ratesWeapons.rates
+				p
+					| Rare
+					br
+					| {{ parseInt(rates.user.rare_skin * 100) }}% / {{ parseInt(rates.bot.rare_skin * 100) }}%
 			div.ratesWeapons.rates
 				p
 					| Weapons
 					br
-					| 95% / 100%
+					| {{ parseInt(rates.user.weapon * 100) }}% / {{ parseInt(rates.bot.weapon * 100) }}%
 			div.ratesMisc.rates
 				p
 					| Misc
 					br
-					| 85% / 90%
+					| {{ parseInt(rates.user.misc * 100) }}% / {{ parseInt(rates.bot.misc * 100) }}%
 			a.btn.btn-auto(href='#') MORE
 			a.btn-bonus(href='#') GET 2% BONUS

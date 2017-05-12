@@ -4,8 +4,8 @@
 			div.row
 				div.col-xs-6
 					h2
-						| 0.00 
-						span.curency US$
+						span.curency US$ 
+						| {{ botInventorySelectedValue.toFixed(2) }}
 				div.col-xs-6.text-right
 					h2 YOUR RECEIVE
 		div.offerBody
@@ -15,3 +15,19 @@
 					br
 					| FROM THE INVENTORY BOX BELOW
 			div.offerItems
+				.offer_container_invertory(id=``, market_hash_name=`{{ item.data.market_hash_name }}`, cost='', assetid=``, float='', data-original-title='', title='', v-for="item in botInventory", v-if="botInventorySelected.indexOf(item.assetid) !== -1", v-on:click="removeItem('bot', item.bot, item.assetid, item.price)")
+					img.st(data-pin-nopin="true", src="/images/st.png", v-if="item.data.market_hash_name.indexOf('StatTrak') !== -1")
+					.stickers
+						img(src='https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/atlanta2017/flip.9266c05ccfaa72e2067b3d907e496faacdc83620.png')
+					.invertory_container_links
+						a.invertory_link_view(href='https://steamcommunity.com/market/listings/730/AK-47 | Cartel (Factory New)', target='_blank') VIEW
+						a.invertory_link(href='steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20S76561198024097357A10090004548D2795057815071777749') INSPECT
+					.offer_container_invertory_inactive
+					.invertory_title_container
+						.invertory_title_text_quantity
+							| x
+							span.count_in_stack 1
+						.invertory_title_container_marka(v-if="item.item_wear") {{ item.item_wear }}
+					img.offer_container_img(:src=`https://steamcommunity-a.akamaihd.net/economy/image/${item.data.image}`)
+					.price_animation
+					.price ${{ item.price }}

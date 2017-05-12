@@ -1,0 +1,68 @@
+#percentages.modal.fade
+	.modal-dialog
+		.modal-content
+			.modal-body
+				h3 Price Calculation
+				p
+					| We are trying to get the most accurate prices on the site by analysing the Steam Market. Combined with the Market Rates we can have a stable & varied inventory.
+				h4 Example
+				p
+					| Let's say that you have a knife. The Steam market price of that knife is estimated to $50 and we are giving you 90% of the market price(the Market Rate). The mathematics part is going to look like this:
+				p.text-center
+					img.img-responsive(src='https://i.imgur.com/HOrfH02.png', alt='')
+				h3 Discounts
+				p Can be combined (Souvenir worth below 0.5 dollar would have 2 discounts)
+				h3 Unaccepted Items
+				ul
+					li 'Too Low': Items worth a below 10 cents is rarely accepted.
+					li 'Overstock': We have too many of the specific item.
+					li
+						| 'Unaccepted': Usually means an unstable market value(Low sell volume / Jumping prices).
+					li 'Too High': We don't accept this item because the price is too high price.
+				h3 Our Cut
+				p
+					| When trading items in the same type(knives to knives) the price will differ with 3-5%. We think this is fair, due to the fact that we are taking risk for every item we trade (values can crash). Also, we lay a lot of time on the bot and we are willing to get a little profit, since this is how trading works!
+#tradelink.modal.fade
+	.modal-dialog
+		.modal-content
+			.modal-body
+				h3 Trade link
+				.alert.alert-danger(v-if='invalidTradelink')
+					strong Invalid tradelink!
+				h4
+					a(href='http://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url', target='_blank') Where do I find this?
+				input.form-control(type='text', v-model='user.tradelink')
+				hr(style='opacity:0; margin: 7.5px 0;')
+				a.btn.btn-primary.btn-lg(v-on:click='updateTradelink') Update
+				hr
+				p
+					| By adding your Steam Trade url you make it possible for our bots to send you a trade offer without the need of adding you as a friend on steam.
+				p
+					| This is totally safe and no items can be traded before you have inspected and accepted the offer from your steam page.
+#tradeoffer.modal.fade
+	.modal-dialog
+		.modal-content
+			.modal-body
+				h3 Trade status
+				.alert.alert-info(v-if=' ! offerStatus.error && offerStatus.status != 3')
+					strong(v-if='offerStatus.status == 4')
+						img(src='/static/img/load.gif', alt='')
+						|  Validating requested trade..
+					strong(v-if='offerStatus.status == 1')
+						img(src='/static/img/load.gif', alt='')
+						|  Preparing to send offer..
+					strong(v-if='offerStatus.status == 2')
+						img(src='/static/img/load.gif', alt='')
+						|  Confirming sent offer..
+				div(v-else-if=' ! offerStatus.error && offerStatus.status == 3')
+					.alert.alert-success
+						strong
+							| Requested trade has been sent successfully!
+							a(:href='`http://steamcommunity.com/tradeoffer/${offerStatus.offer}`', target='_blank') Click here to open the trade offer.
+					.alert.alert-warning
+						| This trade offer will expire in 
+						strong 10 minutes
+						| .
+				div(v-else='')
+					strong(v-if='offerStatus.error.code === 429') We are being rate-limited and could not send the offer. Please try again later.
+					strong(v-else='') {{ offerStatus.error }}
