@@ -16,9 +16,27 @@
 				div.col-xs-4.col-xs-offset-3
 					input.search(value='{filter}', onchange='', placeholder='Search:')
 		div.offerBody
-			div.offerText.text-center
-				p SIGN IN WITH STEAM TO DISPLAY YOUR ITEMS HERE
-				a(href='#')
-					img(src='/images/steam.png', alt='log in with steam')
-			div.offerItems
-				ul
+			if user
+				div.offerItems
+					each item, i in user.inventory.descriptions
+						.offer_container_invertory(id=`${user.inventory.assets[i].assetid}`, market_hash_name=`item.market_name`, cost='', assetid=`${user.inventory.assets[i].assetid}`, float='', data-original-title='', title='')
+							.stickers
+								img(src='https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/atlanta2017/flip.9266c05ccfaa72e2067b3d907e496faacdc83620.png')
+							.invertory_container_links
+								a.invertory_link_view(href='https://steamcommunity.com/market/listings/730/AK-47 | Cartel (Factory New)', target='_blank') VIEW
+								a.invertory_link(href='steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20S76561198024097357A10090004548D2795057815071777749') INSPECT
+							.offer_container_invertory_inactive
+							.invertory_title_container
+								.invertory_title_text_quantity
+									| x
+									span.count_in_stack 1
+								.invertory_title_container_marka FN
+							img.offer_container_img(src='https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhhwszJemkV09-3hpSOm8j4OrzZgiUD7ZJzj7DHoY-iilC1-ENoNWuiI9WWdQI8Z1iE81Tvl7i81J-_6p2b1zI97XPwFCE_/96x72')
+							.price_animation
+							.price 6.92$
+						
+			else
+				div.offerText.text-center
+					p SIGN IN WITH STEAM TO DISPLAY YOUR ITEMS HERE
+					a(href='#')
+						img(src='/images/steam.png', alt='log in with steam')

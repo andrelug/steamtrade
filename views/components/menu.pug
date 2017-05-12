@@ -11,8 +11,18 @@ nav.navbar.navbar-default(role='navigation')
 		#menuDiv.collapse.navbar-collapse
 			ul.nav.navbar-nav.navbar-right
 				li
-					a(href='/api/login')
-						img(src='/images/steam_menu.png', alt='steam login menu')
+					if user
+						div.drop.personaname
+							button.dropbtn
+								img(src=`${user.avatar}`)
+								| #{user.personaname}
+								span.caret
+							div.drop-content
+								a(href='#') TRADE-OFFER URL
+								a(href='#') LOGOUT
+					else
+						a(href='/api/login')
+							img(src='/images/steam_menu.png', alt='steam login menu')
 			ul.nav.navbar-nav.navbar-menu
 				li
 					a(href='/') TRADE
@@ -21,7 +31,7 @@ nav.navbar.navbar-default(role='navigation')
 				li
 					a(href='/about') ABOUT
 				li
-					div.drop
+					div.drop.smaller
 						button.dropbtn
 							| ENG 
 							span.caret
@@ -29,7 +39,7 @@ nav.navbar.navbar-default(role='navigation')
 							a(href='#') PT
 							a(href='#') ESP
 				li
-					div.drop
+					div.drop.smaller
 						button.dropbtn
 							| US$ 
 							span.caret
