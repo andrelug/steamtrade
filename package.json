@@ -14,7 +14,9 @@
     "clean": "rmdir /S /Q dist",
     "build babel": "npm run clean && mkdir dist && babel server -s -d dist",
     "production babel": "npm run build babel && nodemon bin/production",
-    "production": "npm run webpack && nodemon"
+    "production": "npm run webpack && nodemon",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -89,6 +91,8 @@
     "steamcommunity": "^3.30.7",
     "steamcommunity-mobile-confirmations": "^1.0.1",
     "stylus": "^0.54.5",
-    "webpack": "^2.4.1"
-  }
+    "webpack": "^2.4.1",
+    "snyk": "^1.41.1"
+  },
+  "snyk": true
 }
