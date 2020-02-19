@@ -69,7 +69,7 @@
     "morgan": "^1.8.1",
     "multer": "^1.3.0",
     "nib": "^1.1.2",
-    "nodemon": "^1.11.0",
+    "nodemon": "^1.14.11",
     "passport": "^0.3.2",
     "passport-openid": "^0.4.0",
     "passport-steam": "^1.0.8",
