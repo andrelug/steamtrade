@@ -47,7 +47,7 @@
     "mocha": "^3.3.0",
     "node-minify": "^2.0.4",
     "npm-run-all": "^4.0.2",
-    "webpack": "^2.4.1",
+    "webpack": "^3.11.0",
     "webpack-node-externals": "^1.5.4"
   },
   "dependencies": {
@@ -89,6 +89,6 @@
     "steamcommunity": "^3.30.7",
     "steamcommunity-mobile-confirmations": "^1.0.1",
     "stylus": "^0.54.5",
-    "webpack": "^2.4.1"
+    "webpack": "^3.11.0"
   }
 }
