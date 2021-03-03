@@ -74,7 +74,7 @@
     "passport-openid": "^0.4.0",
     "passport-steam": "^1.0.8",
     "pretty-error": "^2.1.0",
-    "pug": "^2.0.0-beta.12",
+    "pug": "^3.0.1",
     "react": "^15.5.4",
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.5.4",
