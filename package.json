@@ -60,7 +60,7 @@
     "express-react-views": "^0.10.2",
     "express-session": "^1.15.2",
     "fc-react-slider": "^0.1.0",
-    "got": "^6.7.1",
+    "got": "^11.8.5",
     "jquery": "^3.2.1",
     "lusca": "^1.4.1",
     "mobx": "^3.1.9",
