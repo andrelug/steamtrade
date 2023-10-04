@@ -86,7 +86,7 @@
     "steam-totp": "^1.4.0",
     "steam-tradeoffers": "^3.1.0",
     "steam-user-inventory": "^4.1.0",
-    "steamcommunity": "^3.30.7",
+    "steamcommunity": "^3.47.0",
     "steamcommunity-mobile-confirmations": "^1.0.1",
     "stylus": "^0.54.5",
     "webpack": "^2.4.1"
