@@ -84,7 +84,7 @@
     "socketio": "^1.0.0",
     "steam": "^1.4.0",
     "steam-totp": "^1.4.0",
-    "steam-tradeoffers": "^3.1.0",
+    "steam-tradeoffers": "^3.2.1",
     "steam-user-inventory": "^4.1.0",
     "steamcommunity": "^3.30.7",
     "steamcommunity-mobile-confirmations": "^1.0.1",
