@@ -88,7 +88,7 @@
     "steam-user-inventory": "^4.1.0",
     "steamcommunity": "^3.30.7",
     "steamcommunity-mobile-confirmations": "^1.0.1",
-    "stylus": "^0.54.5",
+    "stylus": "^0.64.0",
     "webpack": "^2.4.1"
   }
 }
